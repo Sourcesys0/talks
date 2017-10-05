@@ -49,6 +49,22 @@
           </div>
         </section>
 
+        <section class="bg-apple aligncenter">
+          <div class="wrap">
+            <h3><strong>DI in a nutshell</strong></h3>  </div>
+            <pre>
+val kodein = Kodein {
+  bind<Dice>() with provider { RandomDice(0, 5) }
+  bind<DataSource>() with singleton { SqliteDS.open("path/to/file") }
+}
+
+Controller(private kodein: Kodein) {
+  val ds: DataSource = kodein.instance
+}
+            </pre>
+          </div>
+        </section>
+
         <section class="bg-apple">
           <div class="wrap">
             <h2>Benefits</h2>
