@@ -5,7 +5,8 @@ proxy:
     port: 
     host: 
 api:
-    key: javafx:
+    key: 
+javafx:
     title: Newscenter
     stage:
         resizable: false
