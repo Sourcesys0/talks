@@ -1,38 +1,61 @@
+import org.gradle.plugins.ide.eclipse.model.AccessRule
+
 buildscript {
-	ext {
-		springBootVersion = '2.0.0.M4'
-	}
-	repositories {
-		mavenCentral()
-		maven { url "https://repo.spring.io/snapshot" }
-		maven { url "https://repo.spring.io/milestone" }
-	}
-	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-	}
+    dependencies {
+        classpath group: 'de.dynamicfiles.projects.gradle.plugins', name: 'javafx-gradle-plugin', version: '8.8.2'
+    }
+    
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
 }
 
 apply plugin: 'java'
+apply plugin: 'maven'
 apply plugin: 'eclipse'
-apply plugin: 'org.springframework.boot'
-apply plugin: 'io.spring.dependency-management'
+apply plugin: 'javafx-gradle-plugin'
 
-group = 'com.github.deen13'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 1.8
-
-repositories {
-	mavenCentral()
-	maven { url "https://repo.spring.io/snapshot" }
-	maven { url "https://repo.spring.io/milestone" }
+jfx {
+    mainClass = 'com.github.deen13.Main'
+    
+    vendor = 'Dennis Dierkes'
 }
 
+group = 'com.github.deen13'
+version = '0.0.1'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { 
+    	url "http://repo.maven.apache.org/maven2" 
+    }
+}
+
+eclipse {
+    classpath {
+        file {
+            whenMerged {
+                def jre = entries.find { it.path.contains 'org.eclipse.jdt.launching.JRE_CONTAINER' }
+                jre.accessRules.add(new AccessRule('0', 'com/**'))
+                jre.accessRules.add(new AccessRule('0', 'sun/**'))
+            }
+        }
+    }
+}
 
 dependencies {
-	compile 'org.springframework.boot:spring-boot-starter' 
-	
-	testCompile(
-					'org.springframework.boot:spring-boot-starter-test',
-					'org.assertj:assertj-core:3.8.0'				
-	)
+    compile(	'org.springframework.boot:spring-boot-starter:1.5.6.RELEASE',
+    			'de.roskenet:springboot-javafx-support:1.4.0'
+    )
+    
+    testCompile 'de.roskenet:springboot-javafx-test:0.0.4'
 }

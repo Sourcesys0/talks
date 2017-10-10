@@ -26,6 +26,9 @@ factoryConfiguration.json
 # Gradle:
 .idea/**/gradle.xml
 .idea/**/libraries
+**/target/**
+**/build/**
+**/bin/**
 
 # CMake
 cmake-build-debug/
@@ -167,3 +170,4 @@ $RECYCLE.BIN/
 
 # Gradle
 **/.gradle
+/bin/
