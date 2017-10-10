@@ -171,3 +171,6 @@ $RECYCLE.BIN/
 # Gradle
 **/.gradle
 /bin/
+
+# Eclipse
+**/.settings/**
