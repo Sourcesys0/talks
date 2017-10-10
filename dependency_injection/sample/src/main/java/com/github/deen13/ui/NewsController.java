@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.github.deen13.rest.entities.Article;
 import com.github.deen13.rest.service.NewsService;
+import com.github.deen13.ui.listener.ItemSelectedListener;
 
 import de.felixroske.jfxsupport.FXMLController;
 import javafx.beans.property.ListProperty;
@@ -26,6 +27,9 @@ public class NewsController {
 
 		binding.set(service.getLatestArticle());
 		news.itemsProperty().bind(binding);
+
+		ItemSelectedListener listener = new ItemSelectedListener(news);
+		news.getSelectionModel().selectedItemProperty().addListener(listener);
 	}
 
 }

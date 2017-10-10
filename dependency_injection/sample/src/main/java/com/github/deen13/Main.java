@@ -14,5 +14,5 @@ public class Main extends AbstractJavaFxApplicationSupport {
 
 		Thread.setDefaultUncaughtExceptionHandler(new GlobalExceptionHandler());
 	}
-	
+
 }
