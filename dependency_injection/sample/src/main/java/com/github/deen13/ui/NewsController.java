@@ -21,19 +21,12 @@ public class NewsController {
 	private ListProperty<Article> binding = new SimpleListProperty<>();
 
 	@FXML
-	void initialize() {
+	void initialize() throws Exception {
 		assert news != null : "fx:id=\"news\" was not injected: check your FXML file 'helloworld.fxml'.";
 		assert service != null : "No rest news service was injected";
 
-		try {
-			binding.set(service.getLatestArticle());
-			news.itemsProperty().bind(binding);
-		} catch (Exception restException) {
-			Notifications.create()
-					.title("Rest communcation error")
-					.text(restException.getMessage())
-					.showError();
-		}
+		binding.set(service.getLatestArticle());
+		news.itemsProperty().bind(binding);
 	}
 
 }
