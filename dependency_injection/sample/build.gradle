@@ -15,6 +15,7 @@ apply plugin: 'java'
 apply plugin: 'maven'
 apply plugin: 'eclipse'
 apply plugin: 'javafx-gradle-plugin'
+apply plugin: 'idea'
 
 
 jfx {
