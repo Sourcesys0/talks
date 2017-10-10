@@ -1,6 +1,5 @@
 package com.github.deen13.ui;
 
-import org.controlsfx.control.Notifications;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.github.deen13.rest.entities.Article;
