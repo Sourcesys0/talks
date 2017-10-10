@@ -5,4 +5,10 @@ proxy:
     port: 
     host: 
 api:
-    key: 
+    key: javafx:
+    title: Newscenter
+    stage:
+        resizable: false
+    appicons:
+        - /icon.png
+    

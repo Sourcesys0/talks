@@ -5,7 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.github.deen13.ui.NewsView;
 
 import de.felixroske.jfxsupport.AbstractJavaFxApplicationSupport;
-import javafx.stage.Stage;
 
 @SpringBootApplication
 public class Main extends AbstractJavaFxApplicationSupport {
@@ -16,10 +15,4 @@ public class Main extends AbstractJavaFxApplicationSupport {
 		Thread.setDefaultUncaughtExceptionHandler(new GlobalExceptionHandler());
 	}
 	
-	@Override
-	public void start(Stage stage) throws Exception {
-		stage.setResizable(false);
-		super.start(stage);
-	}
-
 }
