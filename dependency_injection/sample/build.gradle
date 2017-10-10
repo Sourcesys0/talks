@@ -2,7 +2,7 @@ import org.gradle.plugins.ide.eclipse.model.AccessRule
 
 buildscript {
     dependencies {
-        classpath group: 'de.dynamicfiles.projects.gradle.plugins', name: 'javafx-gradle-plugin', version: '8.8.2'
+		classpath group: 'de.dynamicfiles.projects.gradle.plugins', name: 'javafx-gradle-plugin', version: '8.8.2'
     }
     
     repositories {
@@ -15,6 +15,7 @@ apply plugin: 'java'
 apply plugin: 'maven'
 apply plugin: 'eclipse'
 apply plugin: 'javafx-gradle-plugin'
+
 
 jfx {
     mainClass = 'com.github.deen13.Main'
@@ -35,9 +36,7 @@ tasks.withType(JavaCompile) {
 repositories {
     mavenLocal()
     mavenCentral()
-    maven { 
-    	url "http://repo.maven.apache.org/maven2" 
-    }
+    maven { url "http://repo.maven.apache.org/maven2" }
 }
 
 eclipse {
@@ -55,7 +54,10 @@ eclipse {
 dependencies {
     compile(	'org.springframework.boot:spring-boot-starter:1.5.6.RELEASE',
     			'de.roskenet:springboot-javafx-support:1.4.0',
-    			'org.controlsfx:controlsfx:9.0.0'
+    			'org.controlsfx:controlsfx:9.0.0',
+    			'org.springframework:spring-web:5.0.0.RELEASE',
+                'com.fasterxml.jackson.core:jackson-databind:2.9.1',
+                'org.apache.httpcomponents:httpclient:4.5.3'
     )
     
     testCompile 'de.roskenet:springboot-javafx-test:0.0.4'
