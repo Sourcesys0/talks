@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.apache.http.client.utils.URIBuilder;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Primary;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +18,7 @@ import com.github.deen13.rest.entities.ArticleWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+@Primary
 @Component
 public class HackerNewsService implements NewsService {
 
@@ -29,6 +31,8 @@ public class HackerNewsService implements NewsService {
 
 	@Override
 	public ObservableList<Article> getLatestArticle() throws URISyntaxException {
+		System.out.println("REAL SERVICE CALLED");
+		
 		final String url = new URIBuilder("https://newsapi.org/v1/articles")
 				.addParameter("sortBy", "latest")
 				.addParameter("source", "hacker-news")

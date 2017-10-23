@@ -53,7 +53,8 @@ eclipse {
 }
 
 dependencies {
-    compile(	'org.springframework.boot:spring-boot-starter:1.5.6.RELEASE',
+    compile(	
+    			'org.springframework.boot:spring-boot-starter:1.5.6.RELEASE',
     			'de.roskenet:springboot-javafx-support:1.4.0',
     			'org.controlsfx:controlsfx:8.40.12',
     			'org.springframework:spring-web:5.0.0.RELEASE',
@@ -62,5 +63,10 @@ dependencies {
                 'com.jfoenix:jfoenix:1.9.0'
     )
     
-    testCompile 'de.roskenet:springboot-javafx-test:0.0.4'
+    testCompile(
+    			'de.roskenet:springboot-javafx-test:0.0.4',
+    			'org.mockito:mockito-all:2.0.2-beta', 
+    			'org.springframework:spring-context:5.0.0.RELEASE',
+    			'org.testfx:testfx-legacy:4.0.8-alpha'
+    )
 }
