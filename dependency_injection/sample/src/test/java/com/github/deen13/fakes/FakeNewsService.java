@@ -1,4 +1,4 @@
-package com.github.deen13.ui;
+package com.github.deen13.fakes;
 
 import com.github.deen13.rest.entities.Article;
 import com.github.deen13.rest.service.NewsService;

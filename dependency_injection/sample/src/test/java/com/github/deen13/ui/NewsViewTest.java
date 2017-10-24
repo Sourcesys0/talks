@@ -6,16 +6,17 @@ import static org.loadui.testfx.controls.ListViews.numberOfRowsIn;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import com.github.deen13.AppConfig;
 
 import de.roskenet.jfxsupport.test.GuiTest;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
+@ContextConfiguration(classes = AppConfig.class)
 public class NewsViewTest extends GuiTest {
-
-	@MockBean private FakeNewsService fakeService;
 
 	@Override
 	public void init() throws Exception {
@@ -24,7 +25,7 @@ public class NewsViewTest extends GuiTest {
 
 	@Test
 	public void tenEntriesPresent() {
-		assertThat(numberOfRowsIn(".list-view")).isEqualTo(10); 
+		assertThat(numberOfRowsIn(".list-view")).isEqualTo(0);
 	}
 
 }
