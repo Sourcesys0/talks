@@ -1,7 +1,6 @@
 package com.github.deen13.ui;
 
-import static org.hamcrest.Matchers.is;
-import static org.loadui.testfx.Assertions.verifyThat;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.loadui.testfx.controls.ListViews.numberOfRowsIn;
 
 import org.junit.Test;
@@ -24,8 +23,8 @@ public class NewsViewTest extends GuiTest {
 	}
 
 	@Test
-	public void test() {
-		verifyThat(numberOfRowsIn(".list-view"), is(0));
+	public void tenEntriesPresent() {
+		assertThat(numberOfRowsIn(".list-view")).isEqualTo(10); 
 	}
 
 }
