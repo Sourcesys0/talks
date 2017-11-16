@@ -81,7 +81,7 @@
 interface PaymentStrategy {	def pay(amount) }      
 
 class CreditCardStrategy implements PaymentStrategy  {
-    def pay(amount) { println "$amount paid with credit card}
+    def pay(amount) { println "$amount paid with credit card"}
 }
 
 class PayPalStrategy implements PaymentStrategy {
