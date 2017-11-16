@@ -67,11 +67,37 @@
                   </p>
                </div>
             </section>
-            <section class="bg-primary">
-               <figure>
-                  <img class="aligncenter" src="uml.png">
-               </figure>
+			
+            <section  class="bg-primary">
+               <!--.wrap = container (width: 90%) -->
+               <div class="wrap">
+                  <div class="grid vertical-align">
+                     <div class="column">
+                        <img class="aligncenter" src="uml.png">
+                     </div>
+                     <!-- .end .column -->
+                     <div class="column">
+                        <pre>
+interface Calculate {	
+    def execute(n, m)	   
+}						
+
+class CalculateByMultiply implements Calculate {
+    def execute(n, m) { n * m }
+}
+
+class CalculateByAddition implements Calculate {
+	def execute(n, m) { n + m }
+}
+</pre>
+                     </div>
+                     <!-- .end .column -->
+                  </div>
+                  <!-- .end .grid -->
+               </div>
+               <!-- .end .wrap -->
             </section>
+			
             <section class="bg-primary">
                <div class="wrap">
                   <h1><span>Benefits</span></h1>
@@ -112,6 +138,7 @@
                </div>
                <!-- .end .wrap -->
             </section>
+			
             <section class="bg-primary">
                <div class="wrap">
                   <h1><span>Disadvantages</span></h1>
@@ -136,6 +163,7 @@
                </div>
                <!-- .end .wrap -->
             </section>
+			
          </article>
       </main>
       <!--main-->
