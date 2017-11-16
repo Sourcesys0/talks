@@ -78,38 +78,42 @@
                      <!-- .end .column -->
                      <div class="column">
                         <pre>
-interface PaymentStrategy {	def pay(amount) }      
+interface PaymentStrategy {
+    def pay(amount)
+} 
 
 class CreditCardStrategy implements PaymentStrategy  {
-    def pay(amount) { println "$amount paid with credit card"}
+    def pay(amount) { 
+        println "$amount paid with credit card"
+    }
 }
 
 class PayPalStrategy implements PaymentStrategy {
-    def pay(amount) { println "$amount paid using paypal"}
+    def pay(amount) {
+        println "$amount paid using paypal"
+    }
 }
 
-class Item { private String name, private int price }
+class Item { 
+    private String name
+    private Double price 
+}
 
 class ShoppingCart {
-
-    private List<Item> items = []
-
+    private items = []
     def pay(strategy) {
         items.each {
             strategy.pay(it.price)
         }
     }
-
     def addItem(name, amount) {
         items.add(new Item(name: name, price: amount))
     }
-
 }
 
 def shoppingCart = new ShoppingCart()
 shoppingCart.addItem("Sneaker", 100)
-
-shoppingCart.pay(new CreditCardStrategy ())
+shoppingCart.pay(new CreditCardStrategy())
 </pre>
                      </div>
                      <!-- .end .column -->
