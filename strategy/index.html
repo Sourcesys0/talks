@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- CLEAN MARKUP = GOOD KARMA.
+         Hi source code lover,
+         
+         you're a curious person and a fast learner ;)
+         Let's make something beautiful together. Contribute on Github:
+         https://github.com/webslides/webslides
+         
+         Thanks!
+         -->
+      <!-- SEO -->
+      <title>Strategy pattern</title>
+      <!-- URL CANONICAL -->
+      <!-- <link rel="canonical" href="http://your-url.com/permalink"> -->
+      <!-- Google Fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
+      <!-- CSS Base -->
+      <link rel="stylesheet" type='text/css' media='all' href="../WebSlides/static/css/webslides.css">
+      <!-- Optional - CSS SVG Icons (Font Awesome) -->
+      <link rel="stylesheet" type="text/css" media="all" href="../WebSlides/static/css/svg-icons.css">
+      <!-- FAVICONS -->
+      <link rel="shortcut icon" sizes="16x16" href="../WebSlides/static/images/favicons/favicon.png">
+      <link rel="shortcut icon" sizes="32x32" href="../WebSlides/static/images/favicons/favicon-32.png">
+      <link rel="apple-touch-icon icon" sizes="76x76" href="../WebSlides/static/images/favicons/favicon-76.png">
+      <link rel="apple-touch-icon icon" sizes="120x120" href="../WebSlides/static/images/favicons/favicon-120.png">
+      <link rel="apple-touch-icon icon" sizes="152x152" href="../WebSlides/static/images/favicons/favicon-152.png">
+      <link rel="apple-touch-icon icon" sizes="180x180" href="../WebSlides/static/images/favicons/favicon-180.png">
+      <link rel="apple-touch-icon icon" sizes="192x192" href="../WebSlides/static/images/favicons/favicon-192.png">
+      <!-- Android -->
+      <meta name="mobile-web-app-capable" content="yes">
+      <meta name="theme-color" content="#333333">
+   </head>
+   <body>
+      <header role="banner">
+         <nav role="navigation">
+            <ul>
+               <li class="github">
+                  <a rel="external" href="https://github.com/deen13" title="Github">
+                     <svg class="fa-github">
+                        <use xlink:href="#fa-github"></use>
+                     </svg>
+                     <em>GitHub</em>
+                  </a>
+               </li>
+               <!--  <li class="dribbble"><a rel="external" href="http://dribbble.com/webslides" title="Dribbble"><svg class="fa-dribbble"><use xlink:href="#fa-dribbble"></use></svg> <em>webslides</em></a></li> -->
+            </ul>
+         </nav>
+      </header>
+      <main role="main">
+         <article id="webslides">
+            <section class="bg-primary">
+               <span class="background dark" style="background-image:url('https://source.unsplash.com/RkJF2BMrLJc/')"></span>
+               <div class="wrap aligncenter">
+                  <h1 class="text-landing">Strategy Pattern</h1>
+                  <p class="text-symbols">* * * </p>
+                  <p>
+                     <a class="button ghost" href="https://github.com/deen13/reallife-strategy-pattern/tree/develop/src/main/java/io/github/deen13/rlstrategy/service/fop" title="Show me the code">
+                        <svg class="fa-github">
+                           <use xlink:href="#fa-github"></use>
+                        </svg>
+                        Sample
+                     </a>
+                  </p>
+               </div>
+            </section>
+			
+            <section  class="bg-primary">
+               <!--.wrap = container (width: 90%) -->
+               <div class="wrap">
+                  <div class="grid vertical-align">
+                     <div class="column">
+                        <img class="aligncenter" src="uml.png">
+                     </div>
+                     <!-- .end .column -->
+                     <div class="column">
+                        <pre>
+interface Calculate {	
+    def execute(n, m)	   
+}						
+
+class CalculateByMultiply implements Calculate {
+    def execute(n, m) { n * m }
+}
+
+class CalculateByAddition implements Calculate {
+	def execute(n, m) { n + m }
+}
+</pre>
+                     </div>
+                     <!-- .end .column -->
+                  </div>
+                  <!-- .end .grid -->
+               </div>
+               <!-- .end .wrap -->
+            </section>
+			
+            <section class="bg-primary">
+               <div class="wrap">
+                  <h1><span>Benefits</span></h1>
+                  <ul class="flexblock features fadeInUp">
+                     <li>
+                        <div>
+                           <h2>
+                              Polymorphie
+                           </h2>
+                           Alternative zur Unterklassenbildung
+                        </div>
+                     </li>
+                     <li>
+                        <div>
+                           <h2>
+                              Code Recycling 
+                           </h2>
+                           Das Verhalten wird durch die einzelnen Klassen contextunabhängig
+                        </div>
+                     </li>
+                     <li>
+                        <div>
+                           <h2>
+                              Dynamisches Verhalten
+                           </h2>
+                           Änderung des Verhaltens zur Laufzeit
+                        </div>
+                     </li>
+                     <li>
+                        <div>
+                           <h2>
+                              Vermeidung von fest kodierten Algorithmen
+                           </h2>
+                           Die Kohäsion des Contexts steigt
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+               <!-- .end .wrap -->
+            </section>
+			
+            <section class="bg-primary">
+               <div class="wrap">
+                  <h1><span>Disadvantages</span></h1>
+                  <ul class="flexblock features fadeInUp">
+                     <li>
+                        <div>
+                           <h2>
+                              Over-Engineering
+                           </h2>
+                           Es werden viele Klassen erstellt
+                        </div>
+                     </li>
+                     <li>
+                        <div>
+                           <h2>
+                              Enge Kopplung zwischen Client und Strategieimplementierungen
+                           </h2>
+                           Der Client setzt die passende Strategie des Contexts und muss folglich die Implementierungen kennen
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+               <!-- .end .wrap -->
+            </section>
+			
+         </article>
+      </main>
+      <!--main-->
+      <!-- Required -->
+      <script src="../WebSlides/static/js/webslides.js"></script>
+      <script>
+         window.ws = new WebSlides();
+      </script>
+      <!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons) -->
+      <script defer src="../WebSlides/static/js/svg-icons.js"></script>
+   </body>
+</html>
